@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitf1bcd8b3899f502e01b03777a62be28e
 {
     public static $prefixLengthsPsr4 = array (
+        'R' => 
+        array (
+            'Rakit\\Validation\\' => 17,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -14,6 +18,10 @@ class ComposerStaticInitf1bcd8b3899f502e01b03777a62be28e
     );
 
     public static $prefixDirsPsr4 = array (
+        'Rakit\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakit/validation/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/App',

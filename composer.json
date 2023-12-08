@@ -11,5 +11,7 @@
             "email": "atilganajan@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "rakit/validation": "^1.4"
+    }
 }

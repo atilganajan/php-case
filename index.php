@@ -1,17 +1,18 @@
 <?php
-
-use App\controllers\StudentGradeController;
-
+require_once 'vendor/autoload.php';
 require_once('config/Database.php');
 require_once('Router.php');
-require_once('App/Controllers/StudentGradeController.php');
+
+use App\controllers\StudentGradeController;
+use App\Middlewares\CSRFMiddleware;
+
+
 
 $router = new Router();
 
+$router->get('/', [StudentGradeController::class,"index"],[]);
 
-$router->get('/', [StudentGradeController::class,"index"]);
-
-$router->post('/student/store', [StudentGradeController::class,"studentStore"],["CSRFMiddleware"]);
+$router->post('/student/store', [StudentGradeController::class,"studentStore"],[CSRFMiddleware::class]);
 
 $request = $_SERVER['REQUEST_URI'];
 

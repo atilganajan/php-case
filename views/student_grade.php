@@ -13,6 +13,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="../assets/js/global.js" ></script>
     <script src="../assets/js/student_grade/student.js" ></script>
@@ -98,15 +99,15 @@
 
                     <div>
                         <label for="createStudentNameInput">Name:</label>
-                        <input class="form-control shadow-sm" id="createStudentNameInput" type="text" maxlength="100" name="name" required>
+                        <input class="form-control shadow-sm" id="createStudentNameInput" type="text" maxlength="100" name="name" >
                     </div>
                     <div class="mt-2">
                         <label for="createStudentSurnameInput">Surname:</label>
-                        <input class="form-control shadow-sm" id="createStudentSurnameInput" type="text" maxlength="100" name="surname" required>
+                        <input class="form-control shadow-sm" id="createStudentSurnameInput" type="text" maxlength="100" name="surname" >
                     </div>
                     <div class="mt-2" >
                         <label for="createStudentNumberInput">Number:</label>
-                        <input class="form-control shadow-sm" id="createStudentNumberInput" type="text" maxlength="20" oninput="positiveNumberFormat(this)" name="studentNumber" required>
+                        <input class="form-control shadow-sm" id="createStudentNumberInput" type="text" maxlength="20" oninput="positiveNumberFormat(this)" name="student_number" >
                     </div>
                 </form>
             </div>
