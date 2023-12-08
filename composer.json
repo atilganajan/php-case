@@ -1,0 +1,15 @@
+{
+    "name": "user/case",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ahmet ATILGAN",
+            "email": "atilganajan@gmail.com"
+        }
+    ],
+    "require": {}
+}

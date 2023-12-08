@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Eğer dosya veya dizin varsa işlem yapma
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Eğer dosya mevcut değilse 404 sayfasına yönlendir
+    RewriteRule ^(.*)$ 404.php [L]
+</IfModule>

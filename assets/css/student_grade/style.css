@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
+
+.top-nav {
+    background-color: #e74c3c;
+    padding: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.top-nav .logo p {
+    margin: 0;
+    color: white;
+    font-size: 27px;
+}
+
+
+.top-action .card {
+    padding: 20px 50px;
+    margin: 10px 30px 10px 30px;
+    border-radius: 8px;
+    background-color: green;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+
+.top-action .card p {
+    height: 30px;
+    padding-top: 5px;
+}
+
+.top-action .card:hover {
+    background-color: #e74c3c;
+
+}
+
