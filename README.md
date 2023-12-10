@@ -11,7 +11,7 @@
 
 1. Projeyi klonla: `git clone https://github.com/atilganajan/php-case`
 
-2. Projek klasörüne gidin: `cd case`
+2. Projek klasörüne gidin: `cd php-case`
 
 3. Composer bağımlılıklarını yükleyin: `composer install`
 
