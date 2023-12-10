@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Validations\Student;
+namespace App\Validations\Lesson;
 use App\Validations\Rules\UniqueRule;
-use Database;
 use Rakit\Validation\Validator;
-
-class StudentValidation
+use Database;
+class LessonValidation
 {
     private $pdo;
     public function __construct()
@@ -13,21 +12,16 @@ class StudentValidation
         $database = new Database();
         $this->pdo = $database->getConnection();
     }
-    public function createStudent($name, $surname, $student_number)
+    public function createLesson($name)
     {
-
         $validator = new Validator;
 
         $validator->addValidator('unique', new UniqueRule($this->pdo));
 
         $validation = $validator->make([
             'name' => $name,
-            'surname' => $surname,
-            'student_number' => $student_number,
         ], [
-            'name' => 'required|max:100',
-            'surname' => 'required|max:100',
-            'student_number' => 'required|max:10|unique:students,student_number',
+            'name' => 'required|max:100|unique:lessons,name',
         ]);
 
         $validation->validate();
@@ -39,21 +33,15 @@ class StudentValidation
 
     }
 
-    public function updateStudent($name, $surname, $student_number, $id)
-    {
-
+    public function updateLesson($name, $id){
         $validator = new Validator;
 
         $validator->addValidator('unique', new UniqueRule($this->pdo));
 
         $validation = $validator->make([
             'name' => $name,
-            'surname' => $surname,
-            'student_number' => $student_number,
         ], [
-            'name' => 'required|max:100',
-            'surname' => 'required|max:100',
-            'student_number' => 'required|max:10|unique:students,student_number,'.$id,
+            'name' => 'required|max:100|unique:lessons,name,'.$id,
         ]);
 
         $validation->validate();
@@ -62,6 +50,6 @@ class StudentValidation
             $errors = $validation->errors();
             return $errors->all();
         }
-
     }
+
 }

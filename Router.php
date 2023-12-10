@@ -13,15 +13,16 @@ class Router {
         $this->routes['POST'][$path]["middlewares"] = $middlewares;
     }
 
-    public function put($path, $action, $middlewares) {
+/*    public function put($path, $action, $middlewares) {
+
         $this->routes['PUT'][$path] = $action;
-        $this->routes['PUT'][$path]["middlewares"] = $middlewares;
+       $this->routes['PUT'][$path]["middlewares"] = [];
     }
 
     public function delete($path, $action, $middlewares) {
         $this->routes['DELETE'][$path] = $action;
         $this->routes['DELETE'][$path]["middlewares"] = $middlewares;
-    }
+    }*/
 
     public function route($request) {
         session_start();

@@ -17,7 +17,7 @@ $tables = [
        id INT AUTO_INCREMENT PRIMARY KEY,
        student_id INT NOT NULL,
        lesson_id INT NOT NULL,
-       grade DECIMAL(4,2) NOT NULL,
+       grade DECIMAL(5,2) NOT NULL,
        CONSTRAINT check_grade_range CHECK (grade >= 0 AND grade <= 100),
        FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
        FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE

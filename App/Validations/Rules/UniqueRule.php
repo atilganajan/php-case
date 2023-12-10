@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Validations\Student\Rules;
+namespace App\Validations\Rules;
 
-use Rakit\Validation\Rule;
 use PDO;
+use Rakit\Validation\Rule;
 
 class UniqueRule extends Rule
 {
-    protected $message = ':attribute :value has already been taken';
-
     protected $pdo;
 
     public function __construct(PDO $pdo)
@@ -20,6 +18,7 @@ class UniqueRule extends Rule
     {
         $this->params['table'] = $params[0];
         $this->params['column'] = $params[1];
+        $this->params['exclude_id'] = $params[2] ?? null;
         return $this;
     }
 
@@ -27,9 +26,19 @@ class UniqueRule extends Rule
     {
         $column = $this->parameter('column');
         $table = $this->parameter('table');
+        $excludeId = $this->parameter('exclude_id');
 
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM $table WHERE $column = :value");
+        $query = "SELECT COUNT(*) FROM $table WHERE $column = :value";
+        if ($excludeId !== null) {
+            $query .= " AND id != :exclude_id";
+        }
+
+        $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':value', $value, PDO::PARAM_STR);
+        if ($excludeId !== null) {
+            $stmt->bindParam(':exclude_id', $excludeId, PDO::PARAM_INT);
+        }
+
         $stmt->execute();
 
         $count = $stmt->fetchColumn();
