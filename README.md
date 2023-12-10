@@ -15,9 +15,9 @@
 
 3. Composer bağımlılıklarını yükleyin: `composer install`
 
-5. config/config.php klasörüne gidip database ayarlarınızı yapın.
-
-6. case.sql dosyasını mysql'e import edin. 
+5. case.sql dosyasını mysql'e import edin. 
+ 
+6. config/config.php klasörüne gidip database ayarlarınızı yapın.
 
 7. Projeyi çalıştırın `php -S localhost:8000`
 
