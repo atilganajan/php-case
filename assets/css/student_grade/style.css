@@ -94,11 +94,10 @@ td{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    width:100%;
 }
 
-.grid-item:nth-child(3) {
-    justify-self: end;
-}
+
 @media (max-width: 1160px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
