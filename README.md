@@ -17,8 +17,8 @@
 
 5. config/config.php klasörüne gidip database ayarlarınızı yapın.
 
-6. Projeyi çalıştırın `php -S localhost:8000`
+6. case.sql dosyasını mysql'e import edin. 
 
-7. Migration'u çalıştırın: `php migration.php` yada case.sql dosyasını mysql'e import edin.
+7. Projeyi çalıştırın `php -S localhost:8000`
 
 
